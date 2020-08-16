@@ -1,0 +1,91 @@
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>CIBIo-FM</title>
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    </head>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        #topo {
+            background: #ffffff;
+        }
+
+        iframe {
+            width: 100%;
+            height: calc(100% - 46px);
+        }
+
+        option:disabled {
+            font-weight: bold;
+            color: black;
+        }
+
+        select {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            height: 46px;
+        }
+
+        button:hover {
+            background: gainsboro;
+        }
+
+        button:disabled {
+            cursor: not-allowed;
+        }
+
+        @media only screen and (max-width: 992px) {
+            iframe {
+                height: calc(100% - 95px);
+            }
+        }
+    </style>
+    <body>
+        <div id="topo">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-auto col-12 center">CIBIo-FM</div>
+                    <div class="col-lg-auto col-4">
+                        <button class="btn btn-primary" onclick="curso.goToPage(1)">Ínicio</button>
+                    </div>
+                    <div class="col-lg-auto col-4">
+                        <button class="prev btn btn-primary" onclick="curso.prevPage()" disabled>Anterior</button>
+                    </div>
+                    <div class="col-lg-auto col-4">
+                        <button class="next btn btn-primary" onclick="curso.nextPage()">Próximo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <iframe id="iframe" name="meuframe" allowfullscreen frameborder="0"></iframe>
+
+        <!-- Carrega o código Javascript contido no caminho especificado no atributo src -->
+        <script src="js/cursoCtrl.js"></script>
+
+        <!-- Cria uma variável curso e atribui o valor de objeto CIBIO presente no arquivo carregado e o inicia com o método init() -->
+        <script>   
+            var curso = new CIBIO();
+            window.onload = function () {
+                curso.init();
+            }
+        </script>
+    </body>
+</html>

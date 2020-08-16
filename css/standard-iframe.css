@@ -1,0 +1,600 @@
+/* Definição de variáveis CSS globais */
+:root{
+    --color-tipo1-normal: #003f86;
+    --color-tipo1-dark: #0086e6;
+}
+/* Faz com que todo texto do documento HTML seja alinhado tanto à esquerda quanto à direita */
+body {
+    text-align: justify;
+}
+/* Define a formatação de divisões flexíveis */
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+/*  
+    Faz com que:
+    As imagens do documento ocupem todo o comprimento da divisão na qual estão inseridas
+    As imagens com texto alternativo "img-normal" e "img-big" tenham formatações próprias,
+    nesse caso, o comprimento máximo, a distância da imagem para o objeto externo e a forma de exibição
+*/
+img{
+    width: 100%;
+}
+img[alt="img-normal"]{
+    max-width: 250px;
+}
+img[alt="img-big"]{
+    max-width: 550px;
+    display: block;
+    margin: 0 auto;
+}
+/* Faz com que a setinha de voltar ao topo fique fixa no canto inferior direito, com 60px de tamanho e clicável */
+footer {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    font-size: 60px;
+    cursor: pointer;
+}
+/* Define formatações específicas para elementos com as seguintes classes */
+.color-white {
+    color: white;
+}
+
+span.light {
+    font-weight: 100;
+}
+
+.text-align-center {
+    text-align: center;
+}
+/* Espaçamento interno dos elementos com a classe header no eixo X e posicionamento relativo */
+.header {
+    padding: 120px 0;
+    position: relative;
+}
+/* Define como vai ficar a parte posterior e a anterior dos elementos com a classe header */
+.header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: url(../img/texture_left.png) no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 320px
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: url(../img/texture.png) no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 320px
+}
+/* Define espaçamento interno nos eixos X e Y de elementos com a classe pill */
+.pill {
+    padding: 80px 20px;
+}
+/* Define formatações específicas para os elementos com a classe subtitle */
+.subtitle {
+    color: var(--color-tipo1-normal);
+    padding: 15px 0;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.subtitle::before {
+    position: absolute;
+    content: "";
+    height: 5px;
+    width: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-tipo1-dark);
+    bottom: 0px;
+}
+/* Define as cores dos textos (links) e a cor do fundo dos elementos com a classe subtitle */
+.bg-color .subtitle {
+    color: white;
+}
+
+.bg-color .subtitle::before {
+    background: white;
+}
+
+.bg-color-dark .subtitle {
+    color: white;
+}
+
+.bg-color-dark .subtitle::before {
+    background: white;
+}
+
+.bg-color a {
+    color: white;
+    text-decoration: underline;
+}
+
+.bg-color-dark a {
+    color: white;
+    text-decoration: underline;
+}
+/* Define espaçamento interno no eixo X, cor de fundo, cor de textos e posicionamento */
+.bg-color {
+    padding: 250px 0px;
+    background: var(--color-tipo1-normal);
+    color: white;
+    position: relative;
+}
+/* Configura as figuras mostradas antes e depois da divisão com classe bg-color
+   Definindo uma imagem de fundo, posicionamento, tamanho do fundo, e dimensões */
+.bg-color::before {
+    content: "";
+    background: url(../img/texture-white-top.png);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 219px;
+}
+
+.bg-color::after {
+    content: "";
+    background: url(../img/texture-white-bottom.png);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 219px;
+}
+/* Define várias configurações diferentes de divisões
+   Configura espaçamentos internos do eixo X, cor de fundo, cor de textos,
+   posicionamento e distanciamento de elementos externos */
+.bg-color-dark {
+    padding: 10px 0px;
+    background: var(--color-tipo1-dark);
+    color: white;
+    position: relative;
+    margin-top: 250px;
+}
+
+.bg-color-1 {
+    padding: 60px 0px;
+    background: #000080;
+    color: white;
+    position: relative;
+    margin-top: -25px;
+}
+.bg-color-2 {
+    padding: 60px 0px;
+    background: #006400;
+    color: white;
+    position: relative;
+    margin-top: 50px;
+}
+.bg-color-3 {
+    padding: 60px 0px;
+    background: #DAA520;
+    color: white;
+    position: relative;
+    margin-top: 50px;
+}
+.bg-color-4 {
+    padding: 60px 0px;
+    background: #ff0000;
+    color: white;
+    position: relative;
+    margin-top: 50px;
+}
+/* Coloca uma figura de detalhe antes da divisão com classe bg-color-dark */
+.bg-color-dark::before {
+    content: "";
+    background: url(../img/texture-blue-top.png);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: -218px;
+    left: 0;
+    width: 100%;
+    height: 219px;
+}
+/* Tudo que tiver texto alternativo icon-fix vai ocupar 100% do comprimento da divisão no qual está inserido
+   E terá comprimento máximo de 150px. */
+[alt="icon-fix"] {
+    width: 100%;
+    max-width: 150px;
+}
+/* Define cores de texto para cada uma das classes indicadas */
+.font-atencao {
+    color: #932426;
+}
+
+.font-fique-olho {
+    color: #334e5c;
+}
+
+.font-reflita {
+    color: #f4b442;
+}
+
+.font-saiba {
+    color: #8AB91E;
+}
+/* Toda imagem que tiver a classe center será exibida em bloco, não terá margem no eixo X e terá margem automática no eixo Y */
+img.center {
+    display: block;
+    margin: 0 auto;
+}
+/* Todo tooltip terá borda tracejada preta de 1px e o cursor será o dedinho */
+[data-toggle="tooltip"] {
+    border-bottom: 1px dashed #000000;
+    cursor: pointer;
+}
+/* Tooltips que estiverem dentro de um elemento com classe bg-color terá borda branca */
+.bg-color [data-toggle="tooltip"] {
+    border-bottom: 1px dashed #ffffff;
+}
+/* Ao clicar em um botão, ele fica sem fundo, com borda sólida e ponteiro dedinho
+   Ao passar o cursor em cima, fica com fundo e com texto branco */
+button[onclick] {
+    background: none;
+    border: 2px solid var(--color-tipo1-normal);
+    cursor: pointer;
+}
+
+button[onclick]:hover {
+    background: var(--color-tipo1-normal);
+    color: #ffffff;
+}
+/* Ao clicar em um botão que está em um elemento com classe bg-color, ele fica com borda branca e texto branco
+   Ao passar o cursor em cima, ele fica com borda branca e texto branco */
+.bg-color button[onclick] {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.bg-color button[onclick]:hover {
+    background: #ffffff;
+    color: #000000;
+}
+/* Configura o posicionamento, a altura, o comprimento, a cor de fundo e o formato do cursor de elementos com a classe menu-guide */
+#menu>.menu-guide {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    height: 50px;
+    width: 50px;
+    background: var(--color-tipo1-normal);
+    cursor: pointer;
+    z-index: 15;
+}
+/* Define o espaçamento externo e o posicionamento de spans que estiverem dentro de um elemento com classe menu-guide */
+#menu>.menu-guide>span {
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    margin-top: -3px;
+}
+/* Define comprimento, altura e cor de fundo branca para os spans do menu e exibe-os em bloco */
+#menu>.menu-guide>span, #menu>.menu-guide>span::before, #menu>.menu-guide>span::after {
+    width: 30px;
+    height: 6px;
+    background-color: white;
+    display: block;
+}
+/* Define o posicionamento e espaçamentos externos das divisões posteriores e anteriores ao span */
+#menu>.menu-guide>span::before, #menu>.menu-guide>span::after {
+    position: absolute;
+    content: '';
+}
+
+#menu>.menu-guide>span::before {
+    margin-top: -12px;
+}
+
+#menu>.menu-guide>span::after {
+    margin-top: 12px;
+}
+/* Configura o tempo de duração e o tempo de latência para as animações dos spans do menu */
+#menu>.menu-guide>span {
+    -webkit-transition-duration: 0s;
+    transition-duration: 0s;
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+/* Configura a cor do fundo e o tempo de latência para spans com o menu aberto */
+#menu.open>.menu-guide>span {
+    background-color: rgba(0, 0, 0, 0.0);
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+/* Cria um efeito na parte anterior e posterior ao span, configurando sua latência e sua duração com o menu aberto e fechado */
+#menu>.menu-guide>span:before {
+    -webkit-transition-property: margin, -webkit-transform;
+    transition-property: margin, transform;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-delay: 0.2s, 0s;
+    transition-delay: 0.2s, 0s;
+}
+
+#menu.open>.menu-guide>span:before {
+    margin-top: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition-delay: 0s, 0.2s;
+    transition-delay: 0s, 0.2s;
+}
+
+#menu>.menu-guide>span:after {
+    -webkit-transition-property: margin, -webkit-transform;
+    transition-property: margin, transform;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-delay: 0.2s, 0s;
+    transition-delay: 0.2s, 0s;
+}
+
+#menu.open>.menu-guide>span:after {
+    margin-top: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transition-delay: 0s, 0.2s;
+    transition-delay: 0s, 0.2s;
+}
+
+#menu>.menu-content {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 30%;
+    height: 100%;
+    background: #ccc;
+    padding: 80px 30px;
+    z-index: 10;
+    transform: translateX(-100%);
+    transition: transform 500ms ease-out;
+}
+
+#menu.open>.menu-content {
+    transform: none
+}
+
+#menu>.menu-content>ul {
+    list-style: none;
+    padding: 0;
+    height: calc(100vh - 160px);
+    overflow: auto;
+}
+
+#menu>.menu-content>ul>li>a {
+    cursor: pointer;
+    color: #000;
+}
+
+.info-box {
+    margin-bottom: 15px;
+}
+
+.info-box .conteudo {
+    position: relative;
+    padding-right: 0;
+}
+
+.info-box .texto {
+    opacity: 0;
+    margin-top: 40px;
+    text-align: justify;
+    transition: opacity 500ms ease;
+    padding: 30px 0;
+}
+
+.info-box.active .texto {
+    opacity: 1;
+}
+
+.info-box .titulo {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 500ms ease;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.info-box .titulo.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 500ms ease;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.info-box .titulo.center+.texto {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.info-box .titulo::before {
+    content: "Clique Aqui!";
+    position: absolute;
+    bottom: -60%;
+    left: 0;
+    font-size: 19px;
+    width: 100%;
+    opacity: 1;
+    transition: opacity 500ms ease;
+}
+
+.info-box.active .titulo::before {
+    opacity: 0;
+}
+
+.info-box.active .titulo {
+    top: 0%;
+    transform: translateY(0%)
+}
+
+.info-box.active .titulo.center {
+    top: 0%;
+    transform: translate(-50%, 0%)
+}
+
+.collapse {
+    color: black;
+}
+
+.nav li>a {
+    padding: 7px 15px 2px;
+    text-decoration-line: none;
+}
+
+.bg-color .nav li>a {
+    color: #fff;
+}
+
+.nav li>a.active {
+    color: #555555;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.card-header {
+    padding: 0;
+}
+
+.card-header button {
+    width: 100%;
+    padding: 20px;
+}
+
+#accordion .card-body {
+    color: #000000;
+}
+
+#accordion .card-body a {
+    color: #000000;
+}
+
+.slick-slide {
+    height: auto;
+}
+.slick-track {
+    display: flex;
+    flex-wrap: wrap;
+}
+.slick-initialized .slick-slide {
+    background: #ffffff;
+    padding: 15px 80px;
+    color: #000;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    font-size: 30px
+}
+.arrow:hover {
+    transform: scale(2) translateY(-50%);
+}
+.arrow-prev {
+    left: -30px;
+}
+.arrow-next {
+    right: -30px;
+}
+
+@media only screen and (max-width: 1600px) {}
+@media only screen and (max-width: 1440px) {
+    .header {
+        padding: 120px 320px;
+    }
+}
+
+@media only screen and (max-width: 1366px) {}
+@media only screen and (max-width: 1280px) {}
+@media only screen and (max-width: 1275px) {
+    .header::before {
+        background-size: 100% auto;
+        height: 100%;
+        width: 260px;
+    }
+    .header::after {
+        background-size: 100% auto;
+        height: 100%;
+        width: 260px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .header {
+        padding: 120px 270px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    /* Coloca espaçamento interno nos elementos com classe header e desativa a exibição de partes posteriores e anteriores */
+    .header {
+        padding: 50px 0;
+    }
+    .header::before {
+        display: none;
+    }
+    .header::after {
+        display: none;
+    }
+    /* Alinha tudo com as classes declaradas para o centro */
+    .font-atencao {
+        text-align: center;
+    }
+    .font-fique-olho {
+        text-align: center;
+    }
+    .font-reflita {
+        text-align: center;
+    }
+    .font-saiba {
+        text-align: center;
+    }
+    /* Define comprimento, posicionamento e efeito de transição para o conteúdo dentro do elemento com classe info-box */
+    .info-box .titulo {
+        width: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 500ms ease;
+    }
+    .info-box.active .titulo {
+        left: 50%;
+        top: 0%;
+        transform: translate(-50%, 0%);
+        transition: all 500ms ease;
+    }
+}
+
+@media only screen and (max-width: 768px) {}
+@media only screen and (max-width: 640px) {}

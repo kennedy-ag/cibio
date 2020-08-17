@@ -352,7 +352,7 @@ button[onclick]:hover {
     -webkit-transition-delay: 0s, 0.2s;
     transition-delay: 0s, 0.2s;
 }
-
+/* Configura o posicionamento, comprimento, altura, cor de fundo e espaçamento interno do conteúdo do menu */
 #menu>.menu-content {
     position: fixed;
     left: 0;
@@ -381,16 +381,23 @@ button[onclick]:hover {
     cursor: pointer;
     color: #000;
 }
-
+/* Produz uma animação nos itens da lista de composição ao passar o mouse em cima */
+#composicao li{
+    -webkit-transition: all 0.5s;
+}
+#composicao li:hover{
+    -webkit-transform: scale(1.1);
+}
+/* Espaçamento externo */
 .info-box {
     margin-bottom: 15px;
 }
-
+/* Posicionamento e espaçamento interno direito */
 .info-box .conteudo {
     position: relative;
     padding-right: 0;
 }
-
+/* Opacidade, espaçamento externo superior, alinhamento de texto, configuração de efeitos de transição e espaçamento interno */
 .info-box .texto {
     opacity: 0;
     margin-top: 40px;
@@ -398,11 +405,23 @@ button[onclick]:hover {
     transition: opacity 500ms ease;
     padding: 30px 0;
 }
-
+/* Cria a tela escura atrás do menu */
+#overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+/* Deixa o texto totalmente visível */
 .info-box.active .texto {
     opacity: 1;
 }
-
+/* Define posicionamento e cursor */
 .info-box .titulo {
     position: absolute;
     left: 15px;
@@ -422,7 +441,7 @@ button[onclick]:hover {
     z-index: 5;
     cursor: pointer;
 }
-
+/* Configura espaçamentos internos no eixo X */
 .info-box .titulo.center+.texto {
     padding-right: 15px;
     padding-left: 15px;
@@ -452,11 +471,11 @@ button[onclick]:hover {
     top: 0%;
     transform: translate(-50%, 0%)
 }
-
+/* Cor de texto preta */
 .collapse {
     color: black;
 }
-
+/* Tira a decoração padrão do texto e adiciona espaçamento interno */
 .nav li>a {
     padding: 7px 15px 2px;
     text-decoration-line: none;
@@ -465,42 +484,43 @@ button[onclick]:hover {
 .bg-color .nav li>a {
     color: #fff;
 }
-
+/* Define cor de fundo, cor de texto, estilo da borda e com da borda inferior */
 .nav li>a.active {
     color: #555555;
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-bottom-color: transparent;
 }
-
+/* Define o formato do cursor */
 .btn {
     cursor: pointer;
 }
-
+/* Espaçamento interno zerado */
 .card-header {
     padding: 0;
 }
-
+/* Comprimento e espaçamento interno */
 .card-header button {
     width: 100%;
     padding: 20px;
 }
-
+/* Define texto na cor preto */
 #accordion .card-body {
     color: #000000;
 }
-
 #accordion .card-body a {
     color: #000000;
 }
-
+/* Altura definida automaticamente */
 .slick-slide {
     height: auto;
 }
+/* Forma de exibição flexível e quebra de divisões */
 .slick-track {
     display: flex;
     flex-wrap: wrap;
 }
+/* Cor de fundo, espaçamento interno, cor do texto, quebra de divisão e alinhamento de texto */
 .slick-initialized .slick-slide {
     background: #ffffff;
     padding: 15px 80px;
@@ -509,7 +529,7 @@ button[onclick]:hover {
     flex-wrap: wrap;
     align-items: center;
 }
-
+/* Configura posicionamento, borda, fundo e tamanho da fonte */
 .arrow {
     position: absolute;
     top: 50%;
@@ -518,6 +538,7 @@ button[onclick]:hover {
     background: none;
     font-size: 30px
 }
+/* Define o posicionamento no eixo X e cria animação quando passar o cursor por cima */
 .arrow:hover {
     transform: scale(2) translateY(-50%);
 }
@@ -527,14 +548,14 @@ button[onclick]:hover {
 .arrow-next {
     right: -30px;
 }
-
+/* Define espaçamento interno diferenciado para a resolução declarada */
 @media only screen and (max-width: 1600px) {}
 @media only screen and (max-width: 1440px) {
     .header {
         padding: 120px 320px;
     }
 }
-
+/* Define tamanho de fundo, comprimento e altura diferenciados para a resolução declarada de elementos com classe header */
 @media only screen and (max-width: 1366px) {}
 @media only screen and (max-width: 1280px) {}
 @media only screen and (max-width: 1275px) {
@@ -549,7 +570,7 @@ button[onclick]:hover {
         width: 260px;
     }
 }
-
+/* Define espaçamento interno diferenciado para a resolução declarada */
 @media only screen and (max-width: 1024px) {
     .header {
         padding: 120px 270px;
